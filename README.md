@@ -59,13 +59,3 @@ pip install numpy pytest
 
 python -m pytest -q    # 5 access-boundary tests
 ```
-
-## Limitations
-
-See [docs/WHAT_THE_GATE_MISSES.md](docs/WHAT_THE_GATE_MISSES.md) for what the gate deliberately does not catch: novel attacks, distribution shift, provider-side model drift, gradual cost creep, and grader drift.
-
-In the code itself:
-
-- These are components, not a deployed service — there's no model client, eval runner that produces the gate's input, or entry point wiring them together.
-- The baseline values in `criteria/definition.py` are documented with how they *would* be measured; no labeled dataset or measurement data is included.
-- Tests cover the access boundary only; there's no dependency file.
